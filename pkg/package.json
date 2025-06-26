@@ -1,0 +1,18 @@
+{
+  "name": "untitled",
+  "type": "module",
+  "collaborators": [
+    "CopimatorKung <76785541+CopimatorKung@users.noreply.github.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "untitled_bg.wasm",
+    "untitled.js",
+    "untitled.d.ts"
+  ],
+  "main": "untitled.js",
+  "types": "untitled.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
