@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://png.pngtree.com/png-clipart/20210308/original/pngtree-mbe-style-icon-png-image_5759379.jpg">
+    <meta charset="UTF-8">
+    <title> Help me </title>
+    <style>
+        body {
+            margin: 100px 100px 100px 100px;
+        }
+        input {
+            text-align: center;
+        }
+        #table_ip {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #table_ip ,td, tr, th {
+            border: 1px solid black;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <table id="table_ip">
+        <tr>
+            <th> Subject </th>
+            <th> Yourscore </th>
+            <th> Yourgrade </th>
+            <th> T/F </th>
+        </tr>
+        <tr>
+            <td><input id="subject1" type="text"></td>
+            <td><input id="score1" type="text"></td>
+            <td><input id="grade1" type="text"></td>
+            <td id="op1"></td>
+        </tr>
+        <tr>
+            <td><input id="subject2" type="text"></td>
+            <td><input id="score2" type="text"></td>
+            <td><input id="grade2" type="text"></td>
+            <td id="op2"></td>
+        </tr>
+        <tr>
+            <td><input id="subject3" type="text"></td>
+            <td><input id="score3" type="text"></td>
+            <td><input id="grade3" type="text"></td>
+            <td id="op3"></td>
+        </tr>
+        <tr>
+            <td><input id="subject4" type="text"></td>
+            <td><input id="score4" type="text"></td>
+            <td><input id="grade4" type="text"></td>
+            <td id="op4"></td>
+        </tr>
+        <tr>
+            <td><input id="subject5" type="text"></td>
+            <td><input id="score5" type="text"></td>
+            <td><input id="grade5" type="text"></td>
+            <td id="op5"></td>
+        </tr>
+
+    </table>
+
+    <button onclick="check()">send</button>
+
+    <script type="module">
+        import init, { cal } from "./pkg/untitled.js";
+
+        async function run() {
+            await init(); // โหลด WebAssembly
+            console.log("Hello, wasm!");
+        }
+
+        window.check = function() {
+
+            console.log("check");
+
+            // ชื่อวิชา
+            // const subject1 = document.getElementById("subject1").value;
+            // const subject2 = document.getElementById("subject2").value;
+            // const subject3 = document.getElementById("subject3").value;
+            // const subject4 = document.getElementById("subject4").value;
+            // const subject5 = document.getElementById("subject5").value;
+
+            const score1 = parseInt(document.getElementById("score1").value);
+            const score2 = parseInt(document.getElementById("score2").value);
+            const score3 = parseInt(document.getElementById("score3").value);
+            const score4 = parseInt(document.getElementById("score4").value);
+            const score5 = parseInt(document.getElementById("score5").value);
+
+            const grade1 = document.getElementById("grade1").value;
+            const grade2 = document.getElementById("grade2").value;
+            const grade3 = document.getElementById("grade3").value;
+            const grade4 = document.getElementById("grade4").value;
+            const grade5 = document.getElementById("grade5").value;
+
+            const out1 = cal(score1, grade1);
+            const out2 = cal(score2, grade2);
+            const out3 = cal(score3, grade3);
+            const out4 = cal(score4, grade4);
+            const out5 = cal(score5, grade5);
+
+            document.getElementById("op1").textContent = out1;
+            document.getElementById("op2").textContent = out2;
+            document.getElementById("op3").textContent = out3;
+            document.getElementById("op4").textContent = out4;
+            document.getElementById("op5").textContent = out5;
+
+        }
+
+        run();
+    </script>
+</body>
+</html>
